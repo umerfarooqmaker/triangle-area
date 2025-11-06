@@ -4,13 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area Calculator</title>
+    <title>AREA Calculator</title>
+    <style>
+     .container{
+        background-color: aquamarine;
+        width: 100%;
+        height:50vh ;
+     }
+     .box{
+        padding:10px ;
+        margin: 10px;
+     }
+  
+    .btn_calculate{
+    padding: 10px;
+    cursor: pointer;
+
+    }
+    .btn_calculate:hover{
+        background-color: blue;
+    }
+    input: focus {
+        background-color: aqua;
+        color:rgb(147, 40, 40);
+    }
+    </style>
 </head>
 <body>
+    <div class="container">
+    <form onsubmit="CalculateArea(); return false">
+        <div class="box">
+        <div class="box red">
+        <label for="base">Enter the base of triangle </label><br>
+        <input type="number" name="baseoftri" id="base" placeholder="Enter the base of triangle"><br>
+    </div>
+    <div class="box green">
+        <label for="height">Enter the height of triangle</label><br>
+        <input type="number" name="heightoftri" id="height" placeholder="Enter the height of triangle"><br>
+        <br>
+    </div>
+    <div class=" box blue">
+        <button class="btn_calculate">Calculate</button>
+    </div>
+   
+</div>
+ 
+
+    </form>
+    </div>
     <script>
-        let base=prompt("Enter the base of triangle");
-        let height=prompt("Enter the height of triangle");
-        let area=1/2*base*height;
-        console.log("Area of triangle is",area);
+        function CalculateArea(){
+        let base1=document.getElementById("base").value;
+        let height1=document.getElementById("height").value;
+        let area=1/2*base1*height1;
+        document.write(area);
+        }
     </script>
 </body>
+</html>
